@@ -164,11 +164,14 @@ int main()
         std::cout << "Please, input any symbol or dot for exit: ";
         std::cin >> symbol;
 
-        if (isdigit(symbol)) {
+        if (isalpha(symbol)) {
+            if (symbol >= 97 && symbol <= 122) {
+                std::cout << static_cast<char>(std::toupper(symbol)) << std::endl;
+            }
+        }
+        else if (isdigit(symbol)) {
             sum += symbol - '0';
             std::cout << sum << std::endl;
-        } else if (isalpha(symbol)) {
-            std::cout << std::toupper(symbol) << std::endl;
         }
         else if (symbol == '.') {
             std::cout << "Bye ..." << std::endl;
