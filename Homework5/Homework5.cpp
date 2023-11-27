@@ -16,27 +16,32 @@ int main()
 
     std::cout << "Task #1" << std::endl;
 
-    int startNumber, stepNumber, finishNumber;
+    int startNumber, stepNumber, finishNumber, currentNumber;
 
     bool isInputCorrect = false;
 
     do {
-        std::cout << "Please, input start point (number): ";
+        std::cout << "Please, enter start number: ";
         std::cin >> startNumber;
-        std::cout << "Please, input step (number): ";
+        std::cout << "Please, input step number: ";
         std::cin >> stepNumber;
-        std::cout << "Please, input last point (number): ";
+        std::cout << "Please, enter the number of elements: ";
         std::cin >> finishNumber;
 
-        isInputCorrect = startNumber < finishNumber && stepNumber > 0;
+        isInputCorrect = stepNumber > 0;
 
         if (!isInputCorrect) {
             std::cout << "Incorrect input ! Please, try again ..." << std::endl;
         }
     } while (!isInputCorrect);
 
-    for (int i = startNumber; i <= finishNumber; i += stepNumber) {
-        std::cout << i << " ";
+    currentNumber = startNumber;
+    finishNumber += startNumber;
+
+    for (int i = startNumber; i < finishNumber; i++) 
+    {
+        currentNumber += stepNumber;
+        std::cout << currentNumber << " ";
     }
 
     std::cout << std::endl;
@@ -136,17 +141,19 @@ int main()
         std::cout << std::endl;
     }
 
-    bool point = true;
+    bool startSymbol = false;
 
     // Reset
     widthThreshold = 0;
 
     for (int i = 0; i <= height; i++) {
 
+        bool symbol = startSymbol = !startSymbol;
+
         for (int j = 0; j < widthThreshold; j++)
         {
-            std::cout << point;
-            point = !point;
+            std::cout << symbol;
+            symbol = !symbol;
         }
 
         widthThreshold += step;
@@ -165,7 +172,7 @@ int main()
         std::cin >> symbol;
 
         if (isalpha(symbol)) {
-            if (symbol >= 97 && symbol <= 122) {
+            if (symbol >= 'a' && symbol <= 'z') {
                 std::cout << static_cast<char>(std::toupper(symbol)) << std::endl;
             }
         }
