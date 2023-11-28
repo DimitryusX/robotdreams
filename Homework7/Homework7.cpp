@@ -39,7 +39,7 @@ int main()
             std::srand(std::time(nullptr));
             const int range = 50;
             int randomNumber = std::rand() % (range + 1);
-            int tries = 0;
+            unsigned int tries = 0;
 
             while (navigation != Menu::RESTART && navigation != Menu::EXIT) {
 
