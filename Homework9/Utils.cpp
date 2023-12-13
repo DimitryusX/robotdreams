@@ -40,11 +40,6 @@ void translateArray(int numbers[], int size)
             numbers[i] = 0;
         }
     }
-
-    for (int i = 0; i < size; i++)
-    {
-        std::cout << numbers[i] << " ";
-    }
 }
 
 void toUppercase(char str[])
@@ -53,11 +48,7 @@ void toUppercase(char str[])
     {
         if (str[i] >= 'a' && str[i] <= 'z')
         {
-            std::cout << static_cast<char>(str[i] - 32);
-        }
-        else
-        {
-            std::cout << str[i];
+            str[i] = str[i] - 32;
         }
     }
 }
@@ -68,21 +59,11 @@ bool isPalindrom(std::string word)
 
     int i = 0;
 
-    do {
+    for (int i = word.length() - 1; i >= 0; --i) {
         reversed += word[i];
-        i++;
-    } while (word[i] != '\0');
+    }
 
-    i = 0;
-
-    do {
-        if (word[i] != reversed[i]) {
-            return false;
-        }
-        i++;
-    } while (word[i] != '\0');
-
-    return true;
+    return word == reversed;
 }
 
 void parseStringLetters(const char str[], int& vowelsCount, int& consonantsCount)
@@ -108,7 +89,11 @@ void parseStringLetters(const char str[], int& vowelsCount, int& consonantsCount
 
 bool isEqual(const char str1[], const char str2[]) 
 {
-    for (int i = 0; str1[i] != '\0'; i++) {
+    for (int i = 0; str1[i] != '\0' || str2[i] != '\0'; i++) {
+
+        char test1 = str1[i];
+        char test2 = str2[i];
+
         if (str1[i] != str2[i])
         {
             return false;

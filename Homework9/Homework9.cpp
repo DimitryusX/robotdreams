@@ -8,35 +8,44 @@ const int stringMaxSize = 20;
 
 int main()
 {
-    std::cout << "Homework 9!\n";
+    std::cout << "homework 9!\n";
 
-    breakLine("Task #1");
+    breakline("task #1");
 
-    std::cout << "Please, input 10 numbers: " << std::endl;
+    std::cout << "please, input 10 numbers: " << std::endl;
 
-    int numbers[numbersArraySize]{};
+    int numbers[numbersarraysize]{};
     int i = 0;
 
     do {
         std::cin >> numbers[i];
         i++;
-    } while (i < numbersArraySize);
+    } while (i < numbersarraysize);
 
-    std::cout << "Processing ... " << std::endl;
+    std::cout << "processing ... " << std::endl;
 
-    translateArray(numbers, numbersArraySize);
+    translatearray(numbers, numbersarraysize);
 
-    breakLine("Task #2");
+    for (int j = 0; j < numbersarraysize; j++)
+    {
+        std::cout << numbers[j] << " ";
+    }
 
-    char stringForUppercase[stringMaxSize]{};
+    breakline("task #2");
 
-    // Should clear input 
-    std::cin.getline(stringForUppercase, stringMaxSize);
+    char stringforuppercase[stringmaxsize]{};
 
-    std::cout << "Enter string for uppercase: ";
-    std::cin.getline(stringForUppercase, stringMaxSize);
+    std::cin.getline(stringforuppercase, stringmaxsize);
 
-    toUppercase(stringForUppercase);
+    std::cout << "enter string for uppercase: ";
+    std::cin.getline(stringforuppercase, stringmaxsize);
+
+    touppercase(stringforuppercase);
+
+    for (int j = 0; j < stringmaxsize; j++)
+    {
+        std::cout << static_cast<char>(stringforuppercase[j]);
+    }
 
     breakLine("Task #3");
 
