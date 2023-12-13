@@ -12,16 +12,12 @@ int fatorialRecursion(int n)
 	}
 }
 
-void printIncreaseNaturalNumbersRecursion(int current, int count)
+void printIncreaseNaturalNumbersRecursion(int current)
 {
-	if (current <= count)
+	if (current >= 1)
 	{
+		printIncreaseNaturalNumbersRecursion(current - 1);
 		std::cout << current << " ";
-		printIncreaseNaturalNumbersRecursion(current + 1, count);
-	}
-	else
-	{
-		std::cout << std::endl;
 	}
 }
 

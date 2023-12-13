@@ -48,7 +48,7 @@ int main()
 
     std::cout << "Printing by recursion: " << std::endl;
     printDecreaseNaturalNumbersRecursion(inputCountOfNaturalNumbers);
-    printIncreaseNaturalNumbersRecursion(1, inputCountOfNaturalNumbers);
+    printIncreaseNaturalNumbersRecursion(inputCountOfNaturalNumbers);
 
     printLine(12);
 
