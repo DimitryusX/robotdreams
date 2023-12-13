@@ -17,7 +17,7 @@ int main()
     int userNumber = 0;
     unsigned int globalGameCount = 0;
     unsigned int globalTriesCount = 0;
-    unsigned int highscore = 0;
+    unsigned int highscore = INT_MAX;
 
     do {
         if (navigation != Menu::RESTART) {
@@ -64,7 +64,7 @@ int main()
 
                     globalTriesCount += tries;
                     
-                    if (highscore == 0 || highscore > tries) {
+                    if (highscore > tries) {
                         highscore = tries;
                     }
                     
