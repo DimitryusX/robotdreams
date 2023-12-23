@@ -7,8 +7,6 @@ int main()
 
     std::cout << std::endl << "Task #1" << std::endl << std::endl;
 
-    const int SIZE = 5;
-
     int arrayOfNumbers[SIZE]{ 5, 1, 9, 7, 3 };
 
     std::cout << "Original array: ";
@@ -28,9 +26,6 @@ int main()
     std::cout << std::endl;
 
     std::cout << std::endl << "Task #2" << std::endl << std::endl;
-
-    const int ROWS = 3;
-    const int COLS = 3;
 
     int arr[ROWS][COLS]{
         {1, 5, 4},

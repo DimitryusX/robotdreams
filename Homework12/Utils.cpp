@@ -17,7 +17,7 @@ void bubbleSort(int arr[], int size) {
     }
 }
 
-int partition(int arr[][3], int index, int low, int high, SortingDirection direction) {
+int partition(int arr[][COLS], const int index, const int low, const int high, const SortingDirection direction) {
     int pivot = (direction == SortingDirection::ByRows) ? arr[index][high] : arr[high][index];
     int pointerIdx = low - 1;
 
@@ -48,7 +48,7 @@ int partition(int arr[][3], int index, int low, int high, SortingDirection direc
     return pointerIdx;
 }
 
-void quickSort(int arr[][3], int index, int low, int high, SortingDirection direction) {
+void quickSort(int arr[][COLS], const int index, const int low, const int high, const SortingDirection direction) {
     if (low < high) {
         int pivot = partition(arr, index, low, high, direction);
 
@@ -57,7 +57,7 @@ void quickSort(int arr[][3], int index, int low, int high, SortingDirection dire
     }
 }
 
-void sort(int arr[][3], int rows, int cols, SortingDirection direction) {
+void sort(int arr[][COLS], const int rows, const int cols, const SortingDirection direction) {
     if (direction == SortingDirection::ByRows) {
         for (int i = 0; i < rows; i++) {
             quickSort(arr, i, 0, cols - 1, direction);
