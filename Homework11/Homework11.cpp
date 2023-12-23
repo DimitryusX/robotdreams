@@ -7,9 +7,6 @@ int main()
 
     std::cout << std::endl << "Task #1" << std::endl << std::endl;
 
-    const size_t ROWS = 4;
-    const size_t COLS = 5;
-
     int arrayOfNumbers[ROWS][COLS]{
         {1, 2, 3, 4, 5},
         {6, 7, 8, 9, 10},
@@ -39,16 +36,16 @@ int main()
     int ascendingArray[COLS]{ 1, 2, 3, 4, 5 };
     int descentingArray[COLS]{ 5, 4, 3, 2, 1 };
 
-    bool isSorderdResult = isSorted(&ascendingArray[0], COLS, SortingDirection::ascending);
+    bool isSorderdResult = isSorted(ascendingArray, COLS, SortingDirection::ascending);
     std::cout << "Is array sorted by ascending: " << std::boolalpha << isSorderdResult << std::endl;
 
-    isSorderdResult = isSorted(&descentingArray[0], COLS, SortingDirection::ascending);
+    isSorderdResult = isSorted(descentingArray, COLS, SortingDirection::ascending);
     std::cout << "Is array sorted by ascending: " << std::boolalpha << isSorderdResult << std::endl;
 
-    isSorderdResult = isSorted(&descentingArray[0], COLS, SortingDirection::descending);
+    isSorderdResult = isSorted(descentingArray, COLS, SortingDirection::descending);
     std::cout << "Is array sorted by descending: " << std::boolalpha << isSorderdResult << std::endl;
 
-    isSorderdResult = isSorted(&ascendingArray[0], COLS, SortingDirection::descending);
+    isSorderdResult = isSorted(ascendingArray, COLS, SortingDirection::descending);
     std::cout << "Is array sorted by descending: " << std::boolalpha << isSorderdResult << std::endl;
 
     std::cout << std::endl << "Task #3" << std::endl << std::endl;

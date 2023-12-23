@@ -1,9 +1,9 @@
 #include <iostream>
 #include "Utils.h"
 
-bool find(const int arr_2d[4][5], const int toFind) {
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 5; j++) {
+bool find(const int arr_2d[ROWS][COLS], const int toFind) {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
             if (toFind == arr_2d[i][j]) {
                 return true;
             }
@@ -35,7 +35,7 @@ bool find(const int* arr_2d, const size_t rows, const size_t cols, const int toF
     return false;
 }
 
-bool isSorted(const int* arr, const int size, SortingDirection direction)
+bool isSorted(const int arr[], const int size, SortingDirection direction)
 {
     if (size <= 1) {
         return true;
