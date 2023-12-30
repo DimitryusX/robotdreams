@@ -12,6 +12,9 @@ face:false
 rock:false
 ship:false
 shop:false
+hello:false
+cocon:false
+speak:false
 child:false
 women:false
 month:false

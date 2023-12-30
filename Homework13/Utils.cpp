@@ -23,29 +23,39 @@ int randomNumberGenerator(const int min, const int max)
     return uniDist(rng);
 }
 
-void compare(const char* first, const char* second, char* hidden, Complexity mode)   
+void compare(std::string first, std::string second, char* hidden, Complexity mode)
 {
-    size_t firstCharArraySize = strlen(first);
+    size_t firstCharArraySize = first.size();
+    size_t secondCharArraySize = second.size();
+
+    if (mode == Complexity::HARD) {
+        std::memset(hidden, '*', firstCharArraySize);
+    }
 
     for (int i = 0; i < firstCharArraySize; i++)
     {
-        char pointer = first[i];
+        char searchWordChar = first[i];
 
-        size_t secondCharArraySize = strlen(second);
+        if (second[i] == first[i]) {
+            hidden[i] = std::toupper(first[i]);
+            second[i] = '*';
+        }
+    }
 
-        if (second[i] == pointer) {
-            hidden[i] = std::toupper(pointer);
+    for (int i = 0; i < firstCharArraySize; i++)
+    {
+        char searchWordChar = first[i];
+
+        if (hidden[i] != '*') {
             continue;
         }
 
         for (int j = 0; j < secondCharArraySize; j++) {
-            if (second[j] == pointer) {
-                hidden[i] = (j == i) ? std::toupper(pointer) : pointer;
-                break;
-            }
 
-            if (mode == Complexity::HARD) {
-                hidden[i] = '*';
+            if (second[j] == searchWordChar) {
+                hidden[i] = searchWordChar;
+                second[j] = '*';
+                break;
             }
         }
     }

@@ -5,7 +5,7 @@
 #include "Time.h"
 #include "UI.h"
 
-const size_t MAX_LINE_SIZE = 64;
+const size_t MAX_LINE_SIZE = 32;
 const size_t MAX_WORD_ARRAY_SIZE = 64;
 unsigned int highscore = INT_MAX;
 
@@ -90,7 +90,7 @@ int main()
             }
             else {
                 // Get random number for set searchable word
-                randomNumber = randomNumberGenerator(0, listOfWordsSize - 1);
+                randomNumber = 15; // randomNumberGenerator(0, listOfWordsSize - 1);
                 parseLine(listOfWords[randomNumber], searchWord, isCompleted);
             }
 
@@ -143,7 +143,7 @@ int main()
                     break;
                 }
 
-                compare(inputWord.c_str(), searchWord.c_str(), hiddenWord, mode);
+                compare(inputWord, searchWord, hiddenWord, mode);
             } while (true);
 
             std::cout << std::endl;
