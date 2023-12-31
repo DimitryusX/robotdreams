@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="Homework16.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Team.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Team.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>

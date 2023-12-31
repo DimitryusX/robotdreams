@@ -3,26 +3,7 @@
 #include "Weapon.h"
 #include "Player.h"
 #include "Team.h"
-
-class Rectangle {
-private:
-    float m_length;
-    float m_height;
-
-public:
-    Rectangle() : m_length(1.0f), m_height(1.0f) {}
-
-    Rectangle(float initialLength, float initialHeight)
-        : m_length(initialLength), m_height(initialHeight) {}
-
-    float getArea() const {
-        return m_length * m_height;
-    }
-
-    float getPerimeter() const {
-        return 2 * (m_length + m_height);
-    }
-};
+#include "Rectangle.h"
 
 int main()
 {
