@@ -34,6 +34,16 @@ void Player::displayPlayerInfo() {
     }
 
     std::cout << std::endl;
+
+    if (m_weapon) {
+        std::cout << "Weapon Info:" << std::endl;
+        m_weapon->displayWeaponInfo();
+    }
+    else {
+        std::cout << "No weapon equipped" << std::endl;
+    }
+
+    std::cout << std::endl;
 }
 
 void Player::setWeapon(Weapon* playerWeapon) {

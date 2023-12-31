@@ -13,8 +13,9 @@ public:
     Team(const std::string& name, int members);
 
     bool addPlayer(Player* player);
-
     bool removePlayer(Player* player);
+
+    std::string getTeamName();
 
     void displayTeamInfo();
 };

@@ -36,3 +36,7 @@ void Team::displayTeamInfo() {
         std::cout << "------------------------" << std::endl;
     }
 };
+
+std::string Team::getTeamName() {
+    return m_teamName;
+}

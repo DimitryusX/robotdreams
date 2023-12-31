@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <vector>
-#include "Player.h"
 #include "Weapon.h"
+#include "Player.h"
 #include "Team.h"
 
 class Rectangle {
