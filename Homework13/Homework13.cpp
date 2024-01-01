@@ -90,7 +90,7 @@ int main()
             }
             else {
                 // Get random number for set searchable word
-                randomNumber = 15; // randomNumberGenerator(0, listOfWordsSize - 1);
+                randomNumber = randomNumberGenerator(0, listOfWordsSize - 1);
                 parseLine(listOfWords[randomNumber], searchWord, isCompleted);
             }
 
