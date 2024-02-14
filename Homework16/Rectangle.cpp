@@ -10,5 +10,5 @@ float Rectangle::getArea() {
 }
 
 float Rectangle::getPerimeter() {
-    return 2 * (m_length + m_height);
+    return 2.0f * (m_length + m_height);
 }
