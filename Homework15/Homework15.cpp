@@ -44,10 +44,10 @@ Student* getBestStudent(Student** students, const size_t size)
     return bestStudent;
 }
 
-int getStudentsCountByMark(Student** students, const size_t size, const double max) {
+int getStudentsCountByMark(Student** students, const size_t size, const double max, const double threshold = 0.75) {
 
     int count = 0;
-    const double border = 0.75 * max;
+    const double border = threshold * max;
     for (int i = 0; i < size; i++) {
         double averageMark = averageStudentMark(students[i]);
         if (averageMark > border) {
