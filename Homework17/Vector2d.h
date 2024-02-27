@@ -25,12 +25,13 @@ public:
 
 	float operator()();
 
-	float& operator[](int i);
+	float& operator[](const unsigned i);
 
 	// friend Vector2d operator+(const Vector2d& leftVector, const Vector2d& rightVector);
 	// friend Vector2d operator-(const Vector2d& leftVector, const Vector2d& rightVector);
 
 	friend std::istream& operator>>(std::istream& input, Vector2d& v);
+	friend std::ostream& operator<<(std::ostream& output, Vector2d& v);
 
 	~Vector2d();
 

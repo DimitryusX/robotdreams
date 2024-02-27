@@ -39,7 +39,7 @@ void Vector2d::add(const Vector2d& other)
 
 float Vector2d::length() 
 {
-	return sqrt(m_x * 2 + m_y * 2);
+	return sqrt(m_x * m_x + m_y * m_y);
 }
 
 float Vector2d::operator()() {
@@ -71,12 +71,15 @@ Vector2d Vector2d::operator-(const Vector2d& secondVector)
 	return Vector2d(m_x - secondVector.m_x, m_y - secondVector.m_y);
 }
 
-float& Vector2d::operator[](int i) 
+float& Vector2d::operator[](const unsigned i) 
 {
-	if (i == 0)
-		return m_x;
-	else if (i == 1)
-		return m_y;
+	if (i > 1) {
+		throw std::out_of_range("Index out of bounds in Vector2d::operator[]");
+	}
+
+	if (i == 0) return m_x;
+	
+	if (i == 1) return m_y;
 
 	return m_x;
 }
@@ -85,6 +88,12 @@ std::istream& operator>>(std::istream& input, Vector2d& v)
 {
 	input >> v.m_x >> v.m_y;
 	return input;
+}
+
+std::ostream& operator<<(std::ostream& os, Vector2d& v)
+{
+	os << "{" << v.m_x << ", " << v.m_y << "}" << std::endl;
+	return os;
 }
 
 Vector2d::~Vector2d() 

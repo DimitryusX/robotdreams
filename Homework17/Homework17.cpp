@@ -53,11 +53,15 @@ int main()
 
     std::cout << "Number of active instances: " << Vector2d::getCount() << std::endl;
 
-    Vector2d test;
+    Vector2d v12;
     std::cout << "Enter vector coordinates (x y): ";
-    std::cin >> test;
+    std::cin >> v12;
     std::cout << "Vector entered: ";
-    test.print();
+    v12.print();
+
+    std::cout << std::endl;
+
+    std::cout << "Vector entered: " << v12 << std::endl;
 
     std::cout << "Number of active instances: " << Vector2d::getCount() << std::endl;
 }
