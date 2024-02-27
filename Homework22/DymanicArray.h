@@ -76,6 +76,10 @@ DynamicArray<T>& DynamicArray<T>::operator=(const DynamicArray<T>& other) {
 
 template<typename T>
 T& DynamicArray<T>::operator[](std::size_t index) {
+    if (index > size) {
+        throw std::out_of_range("Index out of bounds in operator[]");
+    }
+
     return data[index];
 }
 

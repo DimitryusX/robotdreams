@@ -63,5 +63,16 @@ int main()
         std::cout << container3[i] << " ";
     }
 
+    container3.pop_back();
+    container3.pop_back();
+    container3.pop_back();
+
+    container3.shrinkToFit();
+
+    std::cout << std::endl;
+
+    std::cout << "DynamicArray array3 capacity size: " << container3.getCapacity() << std::endl;
+    std::cout << "DynamicArray array3 real size: " << container3.getSize() << std::endl;
+
     std::cout << std::endl;
 }
