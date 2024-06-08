@@ -80,8 +80,7 @@ std::size_t GraphAdjList::numberOfNodesInLevel(unsigned level)
 	std::size_t nodesInCurrentLevel = 0;
 
 	// Create vector with false values (later set true if visited)
-	std::vector<bool> visited;
-	visited.resize(m_vertixes, false);
+	std::vector<bool> visited(m_vertixes, false);
 
 	std::list<int> queue;
 
