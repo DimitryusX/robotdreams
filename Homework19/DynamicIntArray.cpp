@@ -1,5 +1,6 @@
 #include "DynamicIntArray.h"
 #include <algorithm>
+#include "iostream"
 
 DynamicIntArray::DynamicIntArray() : data(nullptr), total(0), size(0) {}
 
@@ -35,6 +36,10 @@ DynamicIntArray& DynamicIntArray::operator=(const DynamicIntArray& other)
 
 int& DynamicIntArray::operator[](std::size_t index) 
 {
+    if (index >= size) {
+        throw std::out_of_range("Index out of range");
+    }
+
     return data[index];
 }
 
