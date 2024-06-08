@@ -1,4 +1,3 @@
-#pragma once
 #include "Time.h"
 
 unsigned int getDay()

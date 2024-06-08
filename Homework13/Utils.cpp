@@ -1,20 +1,15 @@
-#pragma once
 #include "Utils.h"
 #include <ctime>
 #include <random>
 
-std::string toLowerCase(const std::string& input)
+void toLowerCase(std::string& input)
 {
-    std::string result = input;
-
-    for (char& c : result) {
+    for (char& c : input) {
         c = std::tolower(c);
     }
-
-    return result;
 }
 
-int randomNumberGenerator(const int min, const int max)
+int randomNumberGenerator(int min, int max)
 {
     std::random_device rd;
     std::mt19937 rng(rd());
@@ -23,7 +18,7 @@ int randomNumberGenerator(const int min, const int max)
     return uniDist(rng);
 }
 
-void compare(std::string first, std::string second, char* hidden, Complexity mode)
+void compare(std::string& first, std::string& second, char* hidden, Complexity mode)
 {
     size_t firstCharArraySize = first.size();
     size_t secondCharArraySize = second.size();

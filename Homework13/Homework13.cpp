@@ -94,7 +94,7 @@ int main()
                 parseLine(listOfWords[randomNumber], searchWord, isCompleted);
             }
 
-            searchWord = toLowerCase(searchWord);
+            toLowerCase(searchWord);
 
             // Create hidden word
             char* hiddenWord = new char[searchWord.size() + 1];
@@ -113,7 +113,7 @@ int main()
                     std::cout << "Enter  : ";
                     std::cin >> inputWord;
 
-                    inputWord = toLowerCase(inputWord);
+                    toLowerCase(inputWord);
 
                     if (inputWord.size() == searchWord.size()) {
                         break;
@@ -171,24 +171,13 @@ int main()
 
         if (navigation == Menu::HELP)
         {
-            std::cout << std::endl;
-            std::cout << "==================================" << std::endl;
-            std::cout << "| 's' - start new game           |" << std::endl;
-            std::cout << "| 'm' - change mode level        |" << std::endl;
-            std::cout << "| 'd' - start play 'word of day' |" << std::endl;
-            std::cout << "| 'q' - exit                     |" << std::endl;
-            std::cout << "==================================" << std::endl;
-            std::cout << std::endl;
+            getMenuHelp();
         }
 
     } while (navigation != Menu::EXIT);
 
     if (highscore != INT_MAX) {
-        std::cout << std::endl;
-        std::cout << "====================================" << std::endl;
-        std::cout << "Your highscore: " << highscore << " tries!" << std::endl;
-        std::cout << "====================================" << std::endl;
-        std::cout << std::endl;
+        getHighScoreInfo(highscore);
     }
 
     std::cout << "Bye ... " << std::endl;

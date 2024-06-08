@@ -15,6 +15,6 @@ enum class Complexity {
 };
 
 unsigned int getDay();
-std::string toLowerCase(const std::string& input);
-int randomNumberGenerator(const int min, const int max);
-void compare(std::string first, std::string second, char* hidden, Complexity mode);
+void toLowerCase(std::string& input);
+int randomNumberGenerator(int min, int max);
+void compare(std::string& first, std::string& second, char* hidden, Complexity mode);
